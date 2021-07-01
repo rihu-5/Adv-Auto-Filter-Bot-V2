@@ -9,8 +9,7 @@ class Translation(object):
 🤣 LMAO bruh do not waste time looking to add me to your group,  🌝 pls join  @Seriesland4U_Netflix_HBO
 For More Details Click Help Button Below..
 
-<b><i><a href="https://t.me/joinchat/RNK0bCNR-5c1ODFl">Join our channel</a></i></b>
-"""    
+<b><i><a href="https://t.me/joinchat/RNK0bCNR-5c1ODFl">Join our channel</a></i></b>"""    
     
     HELP_TEXT = """
 <b><i><u>How To Use Me!?</u></i></b>
