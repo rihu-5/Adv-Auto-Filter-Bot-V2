@@ -33,9 +33,7 @@ async def start(bot, update):
             me = await bot.get_me()
             await bot.send_message(
                     chat_id=update.chat.id,
-                    text="You Need To Join Our Channel and Press Refresh Button to get the file.* Movie  ലഭിക്കുന്നതിനായി നിങ്ങൾ താഴെയുള്ള ചാനലിൽ ചേർന്നിരിക്കണം.
-
-* അതിനു ശേഷം refresh button അമർത്തുക",
+                    text="You Need To Join Our Channel and Press Refresh Button to get the file",
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel",url="https://t.me/joinchat/RR3YopLGlD00MGQ1")],
                                                        [InlineKeyboardButton(text="Refresh", url=f"https://t.me/{me.username}?start={file_uid}")]]),
                     reply_to_message_id=update.message_id
