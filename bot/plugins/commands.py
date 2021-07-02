@@ -33,7 +33,9 @@ async def start(bot, update):
             me = await bot.get_me()
             await bot.send_message(
                     chat_id=update.chat.id,
-                    text="You Need To Join Our Channel and Press Refresh Button to get the file.",
+                    text="You Need To Join Our Channel and Press Refresh Button to get the file.* Movie  ലഭിക്കുന്നതിനായി നിങ്ങൾ താഴെയുള്ള ചാനലിൽ ചേർന്നിരിക്കണം.
+
+* അതിനു ശേഷം refresh button അമർത്തുക",
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel",url="https://t.me/joinchat/RR3YopLGlD00MGQ1")],
                                                        [InlineKeyboardButton(text="Refresh", url=f"https://t.me/{me.username}?start={file_uid}")]]),
                     reply_to_message_id=update.message_id
@@ -69,7 +71,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/CrazyBotsz"
+                                    'Developers', url="https://t.me/dobby_free"
                                 )
                         ]
                     ]
@@ -88,7 +90,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/Rihu_mone"
+                                    'Developers', url="https://t.me/dobby_free"
                                 )
                         ]
                     ]
@@ -107,7 +109,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/Rihu_mone"
+                                    'Developers', url="https://t.me/dobby_free"
                                 )
                         ]
                     ]
@@ -120,7 +122,7 @@ async def start(bot, update):
         return
 
     buttons = [[
-        InlineKeyboardButton('Developers', url='https://t.me/Rihu_mone'),
+        InlineKeyboardButton('Developers', url='https://t.me/dobby_free'),
         InlineKeyboardButton('Source Code 🧾', url ='https://t.me/BWF_ofc/2')
     ],[
         InlineKeyboardButton('Support 🛠', url='https://t.me/joinchat/c-r6fPf_UqwxMmE9')
