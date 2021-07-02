@@ -4,6 +4,7 @@
 
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from pyrogram.errors import UserNotParticipant
 from bot import Translation # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
@@ -18,6 +19,36 @@ async def start(bot, update):
         file_uid = False
     
     if file_uid:
+        try:
+            member = await bot.get_chat_member(-1001372299086, update.chat.id)
+            if member.status == "kicked":
+                await bot.send_message(
+                       chat_id=update.chat.id,
+                       text="Sorry mate!  You're  B A N N E D 🥱",
+                       reply_to_message_id=update.message_id
+                       )
+                return
+        
+        except UserNotParticipant:
+            me = await bot.get_me()
+            await bot.send_message(
+                    chat_id=update.chat.id,
+                    text="You Need To Join Our Channel and Press Refresh Button to get the file.",
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel",url="https://t.me/joinchat/RR3YopLGlD00MGQ1")],
+                                                       [InlineKeyboardButton(text="Refresh", url=f"https://t.me/{me.username}?start={file_uid}")]]),
+                    reply_to_message_id=update.message_id
+                    )
+            return
+        
+        except Exception:
+            print('Unable to Verify')
+            await bot.send_message(
+                     chat_id=update.chat.id,
+                     text="```Something Went Wrong```",
+                     parse_mode='markdown',
+                     reply_to_message_id=update.message_id
+                     )
+            return
         file_id, file_name, file_caption, file_type = await db.get_file(file_uid)
         
         if (file_id or file_type) == None:
